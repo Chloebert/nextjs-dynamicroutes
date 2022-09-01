@@ -26,6 +26,11 @@ export default function Layout({ children, pageTitle }) {
               Campuses
             </a>
           </Link>
+          <Link href="/articles">
+            <a className={styles.navlink} href="/articles">
+              Articles
+            </a>
+          </Link>
           <Link href="/about">
             <a className={styles.navlink} href="/about">
               About
