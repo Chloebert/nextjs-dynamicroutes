@@ -8,14 +8,18 @@ export default function ArticleDetails({postData, date}) {
     const router = useRouter();
     return (
         <Layout pageTitle={router.isFallback ? 'loading..' : postData.title }>
-            <h1>{postData.title}</h1>
-            <p>This page was last updated on {date}</p>
-            <Image
+            {router.isFallback ? ('Loading article...') : (
+                <>
+                <h1>{postData.title}</h1>
+                <p>This page was last updated on {date}</p>
+                <Image
                 src={postData.pictureUrl}
                 height={400}
                 width={600}
-            />
-            <p>{postData.body}</p>
+                />
+                <p>{postData.body}</p>
+                </>
+            )}
         </Layout>
     )
 }
